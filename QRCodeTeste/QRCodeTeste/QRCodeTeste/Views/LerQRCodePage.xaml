@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="QRCodeTeste.Views.LerQRCodePage"
+             Title="{Binding Title}">    
+     <StackLayout>
+        <Button 
+            Text="Ler QRCode" 
+            Command="{Binding LerQRCodeCommand}"
+            Margin="5,10,5,0"
+            CornerRadius="5"
+            TextColor="White"                            
+            BackgroundColor="#039BE6" 
+            />
+        <Label
+            Margin="5,10,5,0"
+            x:Name="lblCodigoCapturado"          
+           >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span
+                        Text="Conteúdo: " 
+                        FontAttributes="None"
+                        FontSize="14"
+                        />
+                    <Span
+                        Text="{Binding CodigoCapturado}" 
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Entry            
+            Margin="0,40,0,0"
+            ClearButtonVisibility="WhileEditing" 
+            HorizontalOptions="CenterAndExpand" 
+            MaxLength="200"                           
+            x:Name="gerarQRCode"                         
+            Text="{Binding CodigoInformado}"             
+            FontSize="12" 
+            TextColor="Black"
+            Placeholder="Digite aqui o conteúdo do QRCode á ser gerado" 
+            PlaceholderColor="LightBlue"  
+            WidthRequest="320"                                              
+            HorizontalTextAlignment="Center"
+            />
+
+        <Button 
+            Text="Gerar QRCode" 
+            Command="{Binding GerarQRCodeCommand}"
+            Margin="5,0,5,0"
+            CornerRadius="5"
+            TextColor="White"                            
+            BackgroundColor="#039BE6" 
+            />
+    </StackLayout>
+</ContentPage>

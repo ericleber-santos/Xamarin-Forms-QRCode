@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:local="clr-namespace:QRCodeTeste.Views"
+       Title="QRCodeTeste"
+       x:Class="QRCodeTeste.AppShell">
+
+    <!-- 
+        Styles and Resources 
+    --><!--
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    --><!-- Your Pages --><!--
+    <TabBar>
+        <Tab Title="Browse" Icon="tab_feed.png">
+            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+        </Tab>
+        <Tab Title="About" Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
+    </TabBar>
+
+    --><!-- Optional Templates 
+    // These may be provided inline as below or as separate classes.
+
+    // This header appears at the top of the Flyout.
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid>ContentHere</Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    // ItemTemplate is for ShellItems as displayed in a Flyout
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <ContentView>
+                Bindable Properties: Title, Icon
+            </ContentView>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    // MenuItemTemplate is for MenuItems as displayed in a Flyout
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <ContentView>
+                Bindable Properties: Text, Icon
+            </ContentView>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    -->
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" 
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor" 
+                    Value="White" />
+            <Setter Property="Shell.TitleColor" 
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor" 
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" 
+                    Value="#95FFFFFF" />
+        </Style>      
+        
+        <Style TargetType="ShellItem" 
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="AzulShell"
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#039BE6" />
+        </Style>
+        <Style x:Key="RoxoShell"
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">           
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#4a1063" />
+        </Style>
+        <Style x:Key="VermelhoShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#ED3B3B" />
+        </Style>
+        <Style x:Key="OrangeShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="DarkOrange" />
+        </Style>
+        <Style x:Key="SalmonShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="Salmon" />
+        </Style>
+        <Style x:Key="AmareloShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#688270" />
+        </Style>
+        <Style x:Key="LilasShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#3336a3" />
+        </Style>
+        <Style x:Key="VerdeShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#688270" />
+        </Style>
+      
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="QRCode" Icon="tab_feed.png"  Style="{StaticResource RoxoShell}">
+            <ShellContent ContentTemplate="{DataTemplate local:LerQRCodePage}" />
+        </Tab>
+        <Tab Title="EAN13" Icon="tab_about.png"  Style="{StaticResource AzulShell}">
+            <ShellContent ContentTemplate="{DataTemplate local:LerEAN13Page}" />
+        </Tab>
+    </TabBar>
+    
+</Shell>
